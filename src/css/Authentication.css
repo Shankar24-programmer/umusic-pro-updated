@@ -1,0 +1,18 @@
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(1) > td:nth-child(1){
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(2) > td:nth-child(1){
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(3) > td:nth-child(1){
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(4) > td:nth-child(1){
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(5) > td:nth-child(1){
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(6) > td:nth-child(1){
+    font-weight: bold;
+}

@@ -1,0 +1,13 @@
+.btn-outline-secondary{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.table>:not(:first-child) {
+    border-top: none;
+}
+hr {
+    border: 3px;
+}
+.table>tbody {
+    vertical-align: middle;
+}
