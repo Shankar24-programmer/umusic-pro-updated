@@ -13,7 +13,7 @@ export default function ViewallApp() {
                     <div className="addnewapp" style={{ 'width': '950px' }} >
                         <h2 style={{ 'fontWeight': 'normal' }}><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{ 'marginRight': '20px' }} />View Applications</h2>
 
-                        <hr></hr>
+                        <hr className="hehr"></hr>
                     </div>
                     <Row style={{'marginTop':'20px'}}>
                         <Col>
@@ -23,26 +23,8 @@ export default function ViewallApp() {
                             <div className="v1-sub">
                                 <h5>Application Name</h5>
                             </div>
-                            <hr className='hr1'></hr>
-                            <br></br>
-
-                            <div className="v11">
-                                Client ID
-                            </div>
-                            <div className="v11-sub">
-                                <h5>8894</h5>
-                            </div>
-                            <hr className='hr1'></hr>
                             
-                            <br></br>
-
-                            <div className="v12">
-                                Redirect URLs
-                            </div>
-                            <div className="v12-sub">
-                                <h5>https://umusic.com</h5>
-                            </div>
-                            <hr className='hr1'></hr>
+                            
 
                         </Col>
                         <Col>
@@ -52,26 +34,63 @@ export default function ViewallApp() {
                             <div className="v2-sub">
                                 <h5>8891</h5>
                             </div>
-                            <hr className='hr2'></hr>
-                            <br></br>
-                            <div className="v21">
+                            
+                            
+                        </Col>
+                        
+                    </Row>
+                    <hr className="shr"></hr>
+                    <Row style={{'marginTop':'20px'}}>
+                        <Col>
+                            <div className="v1">
+                                Client ID
+                            </div>
+                            <div className="v1-sub">
+                                <h5>Application Name</h5>
+                            </div>
+                            
+                            
+
+                        </Col>
+                        <Col>
+                            <div className="v2">
                                 Client Secret
                             </div>
-                            <div className="v21-sub">
-                                <h5>8894</h5>
+                            <div className="v2-sub">
+                                <h5>8891</h5>
                             </div>
-                            <hr className='hr2'></hr>
-                            <br></br>
+                            
+                            
+                        </Col>
+                        
+                    </Row>
+                    <hr className="shr"></hr>
 
-                            <div className="v22">
+                    <Row style={{'marginTop':'20px'}}>
+                        <Col>
+                            <div className="v1">
+                                Redirect URLs
+                            </div>
+                            <div className="v1-sub">
+                                <h5>Application Name</h5>
+                            </div>
+                            
+                            
+
+                        </Col>
+                        <Col>
+                            <div className="v2">
                                 State
                             </div>
-                            <div className="v22-sub">
-                                <h5>State</h5>
+                            <div className="v2-sub">
+                                <h5>8891</h5>
                             </div>
-                            <hr className='hr2'></hr>
+                            
+                            
                         </Col>
+                        
                     </Row>
+                    <hr className="shr"></hr>
                 </Col>
             </Row>
         </div>

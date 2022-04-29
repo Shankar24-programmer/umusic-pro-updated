@@ -32,42 +32,42 @@ export default function Shopify() {
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='shopifystores/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                             </tbody>

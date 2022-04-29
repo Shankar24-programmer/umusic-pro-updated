@@ -30,42 +30,42 @@ export default function Providers() {
                                     <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='providers/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                     
                                 </tr>
                             </tbody>

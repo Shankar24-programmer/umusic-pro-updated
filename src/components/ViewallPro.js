@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
+import { IoIosLock } from "react-icons/io";
 export default function ViewallPro() {
     return (
         <div>
@@ -9,7 +10,7 @@ export default function ViewallPro() {
                 </Col>
                 <Col sm={9}  style={{ 'marginTop': '-790px', 'marginLeft': '-11px' }}>
                     <div className="addnewapp" style={{ 'width': '950px' }} >
-                        <h2 style={{ 'fontWeight': 'normal' }}><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{ 'marginRight': '20px' }} />View Providers</h2>
+                        <h2 style={{ 'fontWeight': 'normal' }}><IoIosLock color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-7px' }} />View Providers</h2>
 
                         <hr></hr>
                     </div>
@@ -31,7 +32,12 @@ export default function ViewallPro() {
                                 <h5 style={{'fontWeight':'normal'}}>8891</h5> 
                             </div>
                         </Col>
-                        <Col>
+                    
+                        
+                    </Row>
+                    <hr style={{'width': '89%'}}></hr>
+                    <Row>
+                    <Col>
                             <div className="shop3">
                                 <h5 className="shop31" style={{'fontWeight':'bold'}}>Provider ID</h5>
                             </div>
@@ -39,7 +45,6 @@ export default function ViewallPro() {
                                 <h5 style={{'fontWeight':'normal'}}>8891</h5>
                             </div>
                         </Col>
-                        
                     </Row>
                     <hr style={{'width': '89%'}}></hr>
                 </Col>

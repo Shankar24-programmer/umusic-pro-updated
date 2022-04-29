@@ -10,7 +10,7 @@ export default function AddnewAuth() {
                 </Col>
                 <Col sm={9} style={{ 'marginTop': '-790px', 'marginLeft': '-11px' }}>
                     <div className="addnewapp" style={{ 'width': '950px' }} >
-                        <h2 style={{ 'fontWeight': 'normal' }}><FaShopify color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-8px' }} />Edit Authentication Providers</h2>
+                        <h2 style={{ 'fontWeight': 'normal' }}><FaShopify color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-8px' }} />Add/Edit Authentication Providers</h2>
 
                         <hr></hr>
                     </div>

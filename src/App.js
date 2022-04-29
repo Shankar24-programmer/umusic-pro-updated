@@ -21,6 +21,7 @@ function App() {
       <Router>
     <Sidebar/>
     <Routes>
+      <Route path="/" element={<Carding/>}/>
       <Route path='/dashboard' element={<Carding/>}/>
       <Route path='/applications' element={<Applications/>}/>
       <Route path='/applications/addnew' element={<AddnewApp/>}/>

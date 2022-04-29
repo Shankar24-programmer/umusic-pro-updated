@@ -10,7 +10,7 @@ export default function AddnewApp() {
                 </Col>
                 <Col sm={9} style={{ 'marginTop': '-790px', 'marginLeft': '-11px' }}>
                     <div className="addnewapp" style={{ 'width': '950px' }} >
-                        <h2 style={{ 'fontWeight': 'normal' }}><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{ 'marginRight': '20px' }} />Edit Application</h2>
+                        <h2 style={{ 'fontWeight': 'normal' }}><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{ 'marginRight': '20px' }} />Add/Edit Application</h2>
 
                         <hr></hr>
                     </div>

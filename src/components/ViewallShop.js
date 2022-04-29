@@ -32,7 +32,12 @@ export default function ViewallShop() {
                                 <h5 style={{'fontWeight':'normal'}}>8891</h5> 
                             </div>
                         </Col>
-                        <Col>
+                        
+                        
+                    </Row>
+                    <hr style={{'width': '89%'}}></hr>
+                    <Row>
+                    <Col>
                             <div className="shop3">
                                 <h5 className="shop31" style={{'fontWeight':'bold'}}>Secret</h5>
                             </div>
@@ -40,7 +45,6 @@ export default function ViewallShop() {
                                 <h5 style={{'fontWeight':'normal'}}>Secret</h5>
                             </div>
                         </Col>
-                        
                     </Row>
                     <hr style={{'width': '89%'}}></hr>
                 </Col>

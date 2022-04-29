@@ -73,47 +73,69 @@ function Sidebar() {
                                             </Nav.Link>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="1">
-                                            
-                                            <Accordion.Header><Nav.Link href='/applications'><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{'width':'25px', 'marginRight': '10px'}}/>Applications</Nav.Link></Accordion.Header>
-                                            
-                                            <Accordion.Body>
+                                        <Nav.Link href='/applications'>
+                                            <Accordion.Header><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{'width':'25px', 'marginRight': '10px'}}/>Applications</Accordion.Header>
+                                        </Nav.Link>    
+                                        <Nav.Link href='/applications'>
+                                            <Accordion.Body style={{'fontWeight':'bold'}}>
                                                 All Applications
                                                 
                                             </Accordion.Body>
+                                            </Nav.Link>
+                                            <Nav.Link href='/applications/addnew'>
                                             <Accordion.Body>
-                                                <Nav.Link href='/applications/addnew'>Add New</Nav.Link>
+                                                Add New
                                                 
                                             </Accordion.Body>
+                                            </Nav.Link>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="2">
-                                            <Accordion.Header><Nav.Link href='/shopifystores'><FaShopify color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Shopify Stores</Nav.Link></Accordion.Header>
-                                            <Accordion.Body>
+                                        <Nav.Link href='/shopifystores'>
+                                            <Accordion.Header><FaShopify color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Shopify Stores</Accordion.Header>
+                                        </Nav.Link>
+                                        <Nav.Link href='/shopifystores'>
+                                            <Accordion.Body style={{'fontWeight':'bold'}}>
                                                 All Shopify Stores
                                             </Accordion.Body>
+                                            </Nav.Link>
+                                            <Nav.Link href='/shopifystores/addnew'>
                                             <Accordion.Body>
-                                                <Nav.Link href='/shopifystores/addnew'>Add New</Nav.Link>
+                                                Add New
                                                 
                                             </Accordion.Body>
+                                            </Nav.Link>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="3">
-                                            <Accordion.Header><Nav.Link href='/authenticationproviders'><IoIosLock color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Authentication Providers</Nav.Link></Accordion.Header>
-                                            <Accordion.Body>
+                                        <Nav.Link href='/authenticationproviders'>
+                                            <Accordion.Header><IoIosLock color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Authentication Providers</Accordion.Header>
+                                        </Nav.Link>
+                                        <Nav.Link href='/authenticationproviders'>
+                                            <Accordion.Body style={{'fontWeight':'bold'}}>
                                                 All Authentication Providers
                                             </Accordion.Body>
+                                        </Nav.Link>
+                                            <Nav.Link href="/authenticationproviders/addnew">
                                             <Accordion.Body>
-                                                <Nav.Link href="/authenticationproviders/addnew">Add New</Nav.Link>
+                                                Add New
                                                 
                                             </Accordion.Body>
+                                            </Nav.Link>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="4">
-                                            <Accordion.Header><Nav.Link href='/providers'><IoIosLock color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Providers</Nav.Link></Accordion.Header>
-                                            <Accordion.Body>
+                                        <Nav.Link href='/providers'>
+                                            <Accordion.Header><IoIosLock color="#B6B6B6" fontSize="25px" style={{'width':'25px', 'marginRight': '10px'}}/>Providers</Accordion.Header>
+                                        </Nav.Link>
+                                        <Nav.Link href='/providers'>
+                                            <Accordion.Body style={{'fontWeight':'bold'}}>
                                                 All Providers
                                             </Accordion.Body>
+                                        </Nav.Link>
+                                            <Nav.Link href='/providers/addnew'>
                                             <Accordion.Body>
-                                                <Nav.Link href='/providers/addnew'>Add New</Nav.Link>
+                                                Add New
                                                 
                                             </Accordion.Body>
+                                            </Nav.Link>
                                         </Accordion.Item>
                                     </Accordion>
                                 </Card>

@@ -36,7 +36,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary"><Nav.Link href='/applications/addnew'>Edit</Nav.Link></Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
@@ -45,7 +45,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
@@ -54,7 +54,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
@@ -63,7 +63,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
@@ -72,7 +72,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                                 <tr>
                                     <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
@@ -81,7 +81,7 @@ export default function Applications() {
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">Edit</Button></td>
+                                    <td><Nav.Link href='/applications/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                                 </tr>
                             </tbody>
                         </Table>

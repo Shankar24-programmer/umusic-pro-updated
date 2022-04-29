@@ -39,10 +39,10 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                             <tr>
-                                <td>Application Name</td>
+                                <td><Nav.Link href='/authenticationproviders/viewall'>Application Name</Nav.Link></td>
                                 <td>8891</td>
                                 <td>8891</td>
                                 <td>8891</td>
@@ -50,10 +50,10 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                             <tr>
-                                <td>Application Name</td>
+                                <td><Nav.Link href='/authenticationproviders/viewall'>Application Name</Nav.Link></td>
                                 <td>8891</td>
                                 <td>8891</td>
                                 <td>8891</td>
@@ -61,10 +61,10 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                             <tr>
-                                <td>Application Name</td>
+                                <td><Nav.Link href='/authenticationproviders/viewall'>Application Name</Nav.Link></td>
                                 <td>8891</td>
                                 <td>8891</td>
                                 <td>8891</td>
@@ -72,10 +72,10 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                             <tr>
-                                <td>Application Name</td>
+                                <td><Nav.Link href='/authenticationproviders/viewall'>Application Name</Nav.Link></td>
                                 <td>8891</td>
                                 <td>8891</td>
                                 <td>8891</td>
@@ -83,10 +83,10 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                             <tr>
-                                <td>Application Name</td>
+                                <td><Nav.Link href='/authenticationproviders/viewall'>Application Name</Nav.Link></td>
                                 <td>8891</td>
                                 <td>8891</td>
                                 <td>8891</td>
@@ -94,7 +94,7 @@ export default function Authentication() {
                                 <td>State</td>
                                 <td>True</td>
                                 <td>State</td>
-                                <td><Button variant="outline-secondary">State</Button></td>
+                                <td><Nav.Link href='/authenticationproviders/addnew'><Button variant="outline-secondary">Edit</Button></Nav.Link></td>
                             </tr>
                         </tbody>
                     </Table>
