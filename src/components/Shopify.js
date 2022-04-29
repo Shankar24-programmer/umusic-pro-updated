@@ -1,4 +1,5 @@
 import React from 'react'
+import { Nav } from 'react-bootstrap';
 import { Row, Col, Container, Button, Table } from 'react-bootstrap'
 import { FaShopify } from "react-icons/fa";
 import '../css/Shopify.css'
@@ -28,42 +29,42 @@ export default function Shopify() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>Store Name</td>
+                                    <td><Nav.Link href='shopifystores/viewall'>Store Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>

@@ -1,0 +1,34 @@
+.add-btn {
+    display: flex;
+    margin-left: 477px;
+    margin-top: 30px;
+}
+.add-btn1 {
+    margin-right: 30px;
+
+}
+
+.add-btn21 {
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: #65D5FF;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(1) > label {
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(2) > label {
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(3) > label {
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(4) > label {
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(5) > label {
+    font-weight: bold;
+}
+#root > div > div:nth-child(2) > div > div.col-sm-9 > form > div:nth-child(6) > label {
+    font-weight: bold;
+}
+

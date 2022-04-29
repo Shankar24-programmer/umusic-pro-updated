@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Button, Table } from 'react-bootstrap'
+import { Row, Col, Button, Table, Nav } from 'react-bootstrap'
 import { IoIosLock } from "react-icons/io";
 
 export default function Providers() {
@@ -27,7 +27,7 @@ export default function Providers() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Provider Name</td>
+                                    <td><Nav.Link href='/providers/viewall'>Provider Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>Secret</td>
                                     <td><Button variant="outline-secondary">Edit</Button></td>

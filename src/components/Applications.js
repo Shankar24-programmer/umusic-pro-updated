@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col, Container, Table, Button, FormControl } from 'react-bootstrap'
 import Sidebar from './Sidebar'
 import '../css/Applications.css'
+import { Nav } from 'react-bootstrap'
 export default function Applications() {
     return (
         <div>
@@ -29,58 +30,58 @@ export default function Applications() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Application Name</td>
-                                    <td>8891</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
+                                    <td><Nav.Link href='/applications/viewall'>8891</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary"><Nav.Link href='/applications/addnew'>Edit</Nav.Link></Button></td>
                                 </tr>
                                 <tr>
-                                    <td>Application Name</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary">Edit</Button></td>
                                 </tr>
                                 <tr>
-                                    <td>Application Name</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary">Edit</Button></td>
                                 </tr>
                                 <tr>
-                                    <td>Application Name</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary">Edit</Button></td>
                                 </tr>
                                 <tr>
-                                    <td>Application Name</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary">Edit</Button></td>
                                 </tr>
                                 <tr>
-                                    <td>Application Name</td>
+                                    <td><Nav.Link href='/applications/viewall'>Application Name</Nav.Link></td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>8891</td>
                                     <td>https://www.universalmusic.com</td>
                                     <td>State</td>
-                                    <td><Button variant="outline-secondary">State</Button></td>
+                                    <td><Button variant="outline-secondary">Edit</Button></td>
                                 </tr>
                             </tbody>
                         </Table>
