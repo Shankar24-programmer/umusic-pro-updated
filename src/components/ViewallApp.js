@@ -1,8 +1,12 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { FaShopify } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 import '../css/ViewallApp.css'
 export default function ViewallApp() {
+
+    const {state} = useLocation();
+    console.log(state)
     return (
         <div>
             <Row>
@@ -21,7 +25,7 @@ export default function ViewallApp() {
                                 Name
                             </div>
                             <div className="v1-sub">
-                                <h5>Application Name</h5>
+                                <h5>{state.name}</h5>
                             </div>
                             
                             
@@ -32,7 +36,7 @@ export default function ViewallApp() {
                                 ID
                             </div>
                             <div className="v2-sub">
-                                <h5>8891</h5>
+                                <h5>{state._id}</h5>
                             </div>
                             
                             
@@ -46,7 +50,7 @@ export default function ViewallApp() {
                                 Client ID
                             </div>
                             <div className="v1-sub">
-                                <h5>Application Name</h5>
+                                <h5>{state.client_id}</h5>
                             </div>
                             
                             
@@ -57,7 +61,7 @@ export default function ViewallApp() {
                                 Client Secret
                             </div>
                             <div className="v2-sub">
-                                <h5>8891</h5>
+                                <h5>{state.client_secret}</h5>
                             </div>
                             
                             
@@ -72,7 +76,7 @@ export default function ViewallApp() {
                                 Redirect URLs
                             </div>
                             <div className="v1-sub">
-                                <h5>Application Name</h5>
+                                <h5>{state.url}</h5>
                             </div>
                             
                             
@@ -83,7 +87,7 @@ export default function ViewallApp() {
                                 State
                             </div>
                             <div className="v2-sub">
-                                <h5>8891</h5>
+                                <h5>{state.state}</h5>
                             </div>
                             
                             

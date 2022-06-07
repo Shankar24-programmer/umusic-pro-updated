@@ -21,6 +21,9 @@ function Sidebar() {
         if(path === '/applications'){
             setSelectedSection('1')
         }
+        if(path === '/applications/newapp'){
+            setSelectedSection('1')
+        }
         if(path === '/shopifystores'){
             setSelectedSection('2')
         }
@@ -33,10 +36,17 @@ function Sidebar() {
         if(path === '/applications/addnew'){
             setSelectedSection('1')
         }
+        
         if(path === '/shopifystores/addnew'){
             setSelectedSection('2')
         }
+        if(path === '/shopifystores/newshop'){
+            setSelectedSection('2')
+        }
         if(path === '/authenticationproviders/addnew'){
+            setSelectedSection('3')
+        }
+        if(path === '/authenticationproviders/newauth'){
             setSelectedSection('3')
         }
         if(path === '/providers/addnew'){
@@ -98,7 +108,7 @@ function Sidebar() {
                                                 All Shopify Stores
                                             </Accordion.Body>
                                             </Nav.Link>
-                                            <Nav.Link href='/shopifystores/addnew'>
+                                            <Nav.Link href='/shopifystores/newshop'>
                                             <Accordion.Body>
                                                 Add New
                                                 
@@ -114,7 +124,7 @@ function Sidebar() {
                                                 All Authentication Providers
                                             </Accordion.Body>
                                         </Nav.Link>
-                                            <Nav.Link href="/authenticationproviders/addnew">
+                                            <Nav.Link href="/authenticationproviders/newauth">
                                             <Accordion.Body>
                                                 Add New
                                                 

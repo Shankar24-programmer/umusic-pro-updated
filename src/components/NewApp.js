@@ -1,62 +1,48 @@
-import React, {useState} from 'react'
-import { Row, Col, Button, Form } from 'react-bootstrap'
-import '../css/AddNewApp.css'
-import {useLocation} from 'react-router-dom'
 import axios from 'axios';
+import React, { useState} from 'react'
+import { Row, Col, Form, Button } from 'react-bootstrap'
+import { FaShopify } from "react-icons/fa";
 import {Link} from 'react-router-dom'
-export default function AddnewApp() {
-    const {state} = useLocation();
+export default function NewApp() {
+    const [data, setData] = useState({name: "", client_id: "", client_secret: "", url: "", state: ""});
 
-    const [name, setName] = useState(state.name);
-    const [clientId, setClientId] = useState(state.client_id);
-    const [clientSecret, setClientSecret] = useState(state.client_secret);
-    const [url, setUrl] = useState(state.url);
-    const [state1, setState] = useState(state.state);
-    
     const nameHandler = (event) => {
-        setName(event.target.value);
+        setData((previousvalue) => {
+            return {...previousvalue, name: event.target.value};
+        });
     };
 
     const clientIdHandler = (event) => {
-        setClientId(event.target.value);
+        setData((previousvalue) => {
+            return {...previousvalue, client_id: event.target.value};
+        });
     };
 
     const clientSecretHandler = (event) => {
-        setClientSecret(event.target.value);
+        setData((previousvalue) => {
+            return {...previousvalue, client_secret: event.target.value};
+        });
     };
 
     const urlHandler = (event) => {
-        setUrl(event.target.value);
+        setData((previousvalue) => {
+            return {...previousvalue, url: event.target.value};
+        });
     };
 
     const state1Handler = (event) => {
-        setState(event.target.value);
+        setData((previousvalue) => {
+            return {...previousvalue, state: event.target.value};
+        });
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
-        const data = {
-            name: name,
-            client_id: clientId,
-            client_secret: clientSecret,
-            url: url,
-            state: state1
-        }
-        console.log(data);
-        axios.put(`http://localhost:9003/application/${state._id}`, data)
-        // .then(response => alert(response))
-        // .catch(error => {
-        //     alert(error.response.data)
-        // });
-
-        setName("");
-        setClientId("");
-        setClientSecret("");
-        setUrl("");
-        setState("");
-        
+        e.preventDefault();
+        let data1 = [data];
+        console.log(data1);
+        axios.post('http://localhost:9003/application', data1);
     }
-
+    
     return (
         <div>
             <Row>
@@ -65,14 +51,15 @@ export default function AddnewApp() {
                 </Col>
                 <Col sm={9} style={{ 'marginTop': '-790px', 'marginLeft': '-11px' }}>
                     <div className="addnewapp" style={{ 'width': '950px' }} >
-                        <h2 style={{ 'fontWeight': 'normal' }}><img src={require('/Users/muthusankar/Desktop/grid-layout/grid/src/Assets/Group 203.png')} style={{ 'marginRight': '20px' }} />Edit Application</h2>
+                        <h2 style={{ 'fontWeight': 'normal' }}><FaShopify color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-8px' }} />Add Application</h2>
 
                         <hr></hr>
                     </div>
+                    
                     <Form style={{ 'width': '50%', 'marginLeft': '180px', 'marginTop': '30px' }}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Name<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the name</span></Form.Label>
-                            <Form.Control type="name" onChange={nameHandler} value={name}/>
+                            <Form.Control type="name" onChange={nameHandler} />
 
                         </Form.Group>
 
@@ -83,22 +70,22 @@ export default function AddnewApp() {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Client ID<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the Client ID</span></Form.Label>
-                            <Form.Control type="name" onChange={clientIdHandler} value={clientId}/>
+                            <Form.Control type="name" onChange={clientIdHandler}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Client Secret<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the Client Secret</span></Form.Label>
-                            <Form.Control type="name" onChange={clientSecretHandler} value={clientSecret}/>
+                            <Form.Control type="name" onChange={clientSecretHandler}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Redirect URLs<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the Redirect URLs</span></Form.Label>
-                            <Form.Control type="name" onChange={urlHandler} value={url}/>
+                            <Form.Control type="name" onChange={urlHandler}/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>State<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the State</span></Form.Label>
-                            <Form.Control type="name" onChange={state1Handler} value={state1}/>
+                            <Form.Control type="name" onChange={state1Handler}/>
                         </Form.Group>
                     </Form>
                     <div className="add-btn">
@@ -106,9 +93,7 @@ export default function AddnewApp() {
                             <Button variant="outline-secondary">Cancel</Button>
                         </div>
                         <div className="add-btn2">
-                            
-                        <Button variant="info" className='add-btn21' onClick={handleSubmit}><Link to="/applications">Save</Link></Button>
-                        
+                        <Button variant="info" className='add-btn21' onClick={handleSubmit}><Link to='/applications'>Save</Link></Button>
                         </div>
 
                     </div>

@@ -1,7 +1,10 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { IoIosLock } from "react-icons/io";
+import {useLocation} from 'react-router-dom'
 export default function ViewallPro() {
+    const {state} =useLocation();
+    console.log(state)
     return (
         <div>
             <Row>
@@ -21,7 +24,7 @@ export default function ViewallPro() {
                                 <h5 className="shop11" style={{'fontWeight':'bold'}}>Name</h5>
                             </div>
                             <div className="shop1-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>Store Name</h5>
+                                <h5 style={{'fontWeight':'normal'}}>{state.name}</h5>
                             </div>
                         </Col>
                         <Col>
@@ -29,7 +32,7 @@ export default function ViewallPro() {
                                 <h5 className="shop21" style={{'fontWeight':'bold'}}>ID</h5>
                             </div>
                             <div className="shop2-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>8891</h5> 
+                                <h5 style={{'fontWeight':'normal'}}>{state._id}</h5> 
                             </div>
                         </Col>
                     
@@ -42,7 +45,7 @@ export default function ViewallPro() {
                                 <h5 className="shop31" style={{'fontWeight':'bold'}}>Provider ID</h5>
                             </div>
                             <div className="shop3-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>8891</h5>
+                                <h5 style={{'fontWeight':'normal'}}>{state.provider_id}</h5>
                             </div>
                         </Col>
                     </Row>

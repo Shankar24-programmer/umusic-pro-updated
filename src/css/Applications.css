@@ -84,3 +84,7 @@ th {
 #root > div > div:nth-child(2) > div > div > div.col-sm-9 > div.table-responsive-lg > table > tbody > tr:nth-child(1) > td:nth-child(2) > a {
     color: #000000 !important;
 }
+
+.nav-link {
+    color: #000000 !important;
+}

@@ -15,6 +15,10 @@ import ViewallApp from './components/ViewallApp';
 import ViewallShop from './components/ViewallShop'
 import ViewallAuth from './components/ViewallAuth'
 import ViewallPro from './components/ViewallPro'
+import NewShop from './components/NewShop'
+import NewApp from './components/NewApp'
+import NewAuth from './components/NewAuth'
+import NewPro from './components/NewPro'
 function App() {
   return (
     <div className="App">
@@ -25,16 +29,20 @@ function App() {
       <Route path='/dashboard' element={<Carding/>}/>
       <Route path='/applications' element={<Applications/>}/>
       <Route path='/applications/addnew' element={<AddnewApp/>}/>
-      <Route path='/applications/viewall' element={<ViewallApp/>}/>
+      <Route path='/applications/newapp' element={<NewApp/>}/>
+      <Route path='/applications/viewall/:id' element={<ViewallApp/>}/>
       <Route path='/shopifystores' element={<ShopifyStores/>}/>
-      <Route path='/shopifystores/viewall' element={<ViewallShop/>}/>
+      <Route path='/shopifystores/newshop' element={<NewShop/>}/>
+      <Route path='/shopifystores/viewall/:id' element={<ViewallShop/>}/>
       <Route path='/shopifystores/addnew' element={<AddnewShop/>}/>
       <Route path='/authenticationproviders' element={<Authentication/>}/>
-      <Route path='/authenticationproviders/viewall' element={<ViewallAuth/>}/>
+      <Route path='/authenticationproviders/viewall/:id' element={<ViewallAuth/>}/>
       <Route path='/authenticationproviders/addnew' element={<AddnewAuth/>}/>
+      <Route path='/authenticationproviders/newauth' element={<NewAuth/>}/>
       <Route path='/providers' element={<Providers/>}/>
       <Route path='/providers/addnew' element={<AddnewPro/>}/>
-      <Route path='/providers/viewall' element={<ViewallPro/>}/>
+      <Route path='/providers/newpro' element={<NewPro/>}/>
+      <Route path='/providers/viewall/:id' element={<ViewallPro/>}/>
       
     </Routes>
     </Router>

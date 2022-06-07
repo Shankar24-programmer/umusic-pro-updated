@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { FaShopify } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import {Links } from 'react-router-dom'
 export default function ViewallShop() {
+
+    const {state}=useLocation();
+    console.log(state)
+
+    
+    
+
     return (
         <div>
             <Row>
@@ -21,7 +31,7 @@ export default function ViewallShop() {
                                 <h5 className="shop11" style={{'fontWeight':'bold'}}>Name</h5>
                             </div>
                             <div className="shop1-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>Store Name</h5>
+                                <h5 style={{'fontWeight':'normal'}}>{state.name}</h5>
                             </div>
                         </Col>
                         <Col>
@@ -29,7 +39,7 @@ export default function ViewallShop() {
                                 <h5 className="shop21" style={{'fontWeight':'bold'}}>ID</h5>
                             </div>
                             <div className="shop2-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>8891</h5> 
+                                <h5 style={{'fontWeight':'normal'}}>{state._id}</h5> 
                             </div>
                         </Col>
                         
@@ -42,7 +52,7 @@ export default function ViewallShop() {
                                 <h5 className="shop31" style={{'fontWeight':'bold'}}>Secret</h5>
                             </div>
                             <div className="shop3-sub" style={{'color': 'rgb(157, 160, 160)', 'marginTop': '10px'}}>
-                                <h5 style={{'fontWeight':'normal'}}>Secret</h5>
+                                <h5 style={{'fontWeight':'normal'}}>{state.secret_id}</h5>
                             </div>
                         </Col>
                     </Row>

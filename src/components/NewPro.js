@@ -1,37 +1,29 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import { FaShopify } from "react-icons/fa";
-import {useLocation} from "react-router-dom"
 import axios from 'axios';
 import {Link} from 'react-router-dom'
-import '../css/EditShop.css';
-export default function AddnewShop() {
-    const {state}=useLocation();
+export default function AddnewPro() {
+    const [data, setData] = useState({name: "", provider_id: ""});
 
-    const [name, setName] = useState(state.name);
-    const [secretId,setSecretId]=useState(state.secret_id)
     const nameHandler = (event) => {
-setName(event.target.value)
+        setData((previousvalue) => {
+            return {...previousvalue, name: event.target.value};
+        });
     };
-    const secret_idHandler = (event) => {
-setSecretId(event.target.value)
+
+    const providerIDHandler = (event) => {
+        setData((previousvalue) => {
+            return {...previousvalue, provider_id: event.target.value};
+        });
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const data={
-            name:name,
-            secret_id:secretId
-        }
-        console.log(data)
-        axios.put(`http://localhost:9002/shopifystores/${state._id}`, data)
-            // .then(response => alert(response))
-            // .catch(error => {
-            //     alert(error.response.data)
-            // });
-            setName("");
-            setSecretId("");
+        let data1 = [data];
+        console.log(data1);
+        axios.post('http://localhost:9003/providers', data1);
     }
-
     return (
         <div>
             <Row>
@@ -39,16 +31,15 @@ setSecretId(event.target.value)
 
                 </Col>
                 <Col sm={9} style={{ 'marginTop': '-790px', 'marginLeft': '-11px' }}>
-                    <div className="addnewapp" style={{ 'width': '950px' }} >
-                        <h2 style={{ 'fontWeight': 'normal' }}><FaShopify color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-8px' }} />Edit Shopify Stores</h2>
+                    <div className="addnewpro" style={{ 'width': '950px' }} >
+                        <h2 style={{ 'fontWeight': 'normal' }}><FaShopify color="#B6B6B6" fontSize="40px" style={{ 'marginRight': '20px', 'marginTop': '-8px' }} />Add Providers</h2>
 
                         <hr></hr>
                     </div>
-                    
                     <Form style={{ 'width': '50%', 'marginLeft': '180px', 'marginTop': '30px' }}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Name<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the name</span></Form.Label>
-                            <Form.Control type="name" onChange={nameHandler} value={name} />
+                            <Form.Control type="name"  onChange={nameHandler}/>
 
                         </Form.Group>
 
@@ -57,9 +48,9 @@ setSecretId(event.target.value)
                             <Form.Control type="name" />
                         </Form.Group> */}
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Secret<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the Secret</span></Form.Label>
-                            <Form.Control type="name" onChange={secret_idHandler} value={secretId}/>
+                        <Form.Group className="mb-3" controlId="formBasicPassword" >
+                            <Form.Label>Provider ID<span style={{ 'marginLeft': '20px', 'fontSize': '14px', 'color': '#C8C8C8' }}>Enter the Provider ID</span></Form.Label>
+                            <Form.Control type="number"  onChange={providerIDHandler}/>
                         </Form.Group>
                     </Form>
                     <div className="add-btn">
@@ -67,9 +58,7 @@ setSecretId(event.target.value)
                             <Button variant="outline-secondary">Cancel</Button>
                         </div>
                         <div className="add-btn2">
-                        
-                        <Button variant="info" className='add-btn21' onClick={handleSubmit}><Link to="/shopifystores/">Save</Link></Button>
-                        
+                            <Button variant="info" className='add-btn21' onClick={handleSubmit}><Link to="/providers">Save</Link></Button>
                         </div>
 
                     </div>
