@@ -7,74 +7,106 @@ import { Link } from "react-router-dom"
 import ReactLoading from 'react-loading'
 import '../css/Authentication.css'
 import axios from 'axios';
-import _ from 'lodash'; 
 
-const pageSize = 5;
-export default function Authentication() {
-
-    const [paginatedPosts, setpaginatedPosts] = useState();
-    const [pagedata, setPageData] = useState();
-    const [currentPage, setCurrentPage] = useState(1);
-
-
-    const [sort, setSort] = useState({});
-    const [condition, setCondition] = useState(false);
-
-    const [data, setData] = useState({ name: "" });
-    const handleSearch = async (e) => {
-        console.log(data);
-
-
-        var response = await axios.post("http://localhost:9001/authenticationproviders/getbyname", { ...data })
-        console.log(response.data);
-        setSort(response.data)
-
-        console.log(sort, "sortUp")
-        if (Object.keys(sort).length !== 0) {
-            console.log(sort, "Sort")
-            var temp = []
-
-            temp.push(sort)
-            console.log(temp, "temp")
-            setPost(temp)
-            console.log(post, "post")
-        }
-    }
-
-    const handleChange = (e) => {
-        setData({ ...data, [e.target.name]: e.target.value })
-    }
-
-
-
-    const [post, setPost] = useState([])
+function Authentication() {
+    const [post, setPost] = useState({ count: "", value: "" })
     const [isLoading, setIsLoading] = useState(false)
+    const [pagination, setPagination] = useState({ limit: 6, skip: 0 })
+    const [data, setData] = useState({ name: "" });
+    // const [pageFormat, setPageFormat] = useState([])
+    const [number, setNumber] = useState(1)
+    const [buttonDis, setButtonDis] = useState(false)
+    const [nextButtonDis, setNextButtonDis] = useState(true)
+
+    const handleChange = async (e) => {
+        setData({ ...data, name: e.target.value })
+        // const response = await axios.post("http://localhost:9003/providers/getbyname", data)
+        // console.log(response.data);
+        // setPost(response.data)
+    }
+    const clearData = () => {
+        setData({ name: "" })
+    }
+    useEffect(() => {
+        const value = async () => {
+            const response = await axios.post("http://localhost:9001/authenticationproviders/getbyname", data)
+            console.log(response.data);
+            console.log(post.count)
+            setPost((previous) => ({
+                ...previous, value: response.data
+            }))
+        }
+        value()
+    }, [data])
     useEffect(() => {
         setTimeout(() => {
-            axios.get('http://localhost:9001/authenticationproviders')
+            axios.get(`http://localhost:9001/authenticationproviders/limit/${pagination.limit}/${pagination.skip}`)
                 .then(res => {
                     console.log(res.data)
-                    setPost(res.data)
-                    setPageData(res.data)
+                    setPost({ count: res.data.count, value: res.data.value })
                     setIsLoading(true)
-                    setpaginatedPosts(_(res.data).slice(0).take(pageSize).value());
                 })
                 .catch(err => {
                     console.log(err)
                 });
         }, 800);
-    }, []);
+        if (pagination.skip / 6 === 0) {
+            setButtonDis(true)
+        }
+        else {
+            setButtonDis(false)
+        }
 
-    const pageCount = pagedata ? Math.ceil(pagedata.length / pageSize) : 0;
-    if(pageCount === 1) return null;
-    const pages = _.range(1, pageCount + 1)
+        if (((pagination.skip / 6) + 1) === Math.ceil((post.count / 6))) {
+            setNextButtonDis(true)
+        }
+        else {
+            setNextButtonDis(false)
+        }
+    }, [pagination]);
 
-    const pagination = (pageNo) => {
-        setCurrentPage(pageNo);
-        const startIndex = (pageNo - 1) * pageSize;
-        const paginatedPosts = _(pagedata).slice(startIndex).take(pageSize).value();
-        setpaginatedPosts(paginatedPosts)
+    // const lastPost = number * postPerPage;
+    // const firstPost = lastPost - postPerPage;
+    // const currentPost = post.value.slice(firstPost, lastPost);
+
+    if (post.value.length > 6) {
+        const sea = post.value.slice(0, 6)
+        setPost((previous) => ({
+            ...previous, value: sea
+        }))
     }
+
+    const pageNumber = [];
+
+    for (let i = 1; i <= Math.ceil(post.count / pagination.limit); i++) {
+        pageNumber.push(i);
+    }
+
+    // const data2 = post.slice(0, 3)
+    // console.log(data2)
+
+    const ChangePage = (pageNumber) => {
+        setNumber(pageNumber);
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * (pageNumber - 1)
+        }))
+
+    };
+
+    const onPreviousPageHandler = () => {
+        console.log(pagination.skip / 6)
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * ((pagination.skip / 6) - 1)
+        }))
+    }
+
+    const onNextPageHandler = () => {
+        console.log(pagination.skip / 6)
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * ((pagination.skip / 6) + 1)
+        }))
+    }
+
     return (
         <div>
             <Row>
@@ -98,7 +130,7 @@ export default function Authentication() {
                                         value={data.name}
                                     />
                                     <div className="input-group-prepend">
-                                        <span className="input-group-text purple lighten-3" id="basic-text1" style={{ 'color': 'white', 'background-color': 'black', 'cursor': 'pointer' }} onClick={() => {handleSearch()}}>
+                                        <span className="input-group-text purple lighten-3" id="basic-text1" style={{ 'color': 'white', 'background-color': 'black', 'cursor': 'pointer' }}>
                                             <BsSearch fontSize="23px" />
                                         </span>
                                     </div>
@@ -128,40 +160,57 @@ export default function Authentication() {
 
                             </div>
                         ) : (
-                            paginatedPosts.map((data) => {
-                                return (
-                                    <tbody>
-                                        <tr>
-                                            <td><Nav.Link as={Link} to={`/authenticationproviders/viewall/${data._id}`} state={data}>{data.name}</Nav.Link></td>
-                                            <td>{data._id}</td>
-                                            <td>{data.provider_id}</td>
-                                            <td>{data.client_id}</td>
-                                            <td>{data.client_secret}</td>
-                                            <td>{data.application_id}</td>
-                                            <td>{data.is_global}</td>
-                                            <td>{data.state_name}</td>
-                                            <td><Link to='/authenticationproviders/addnew' state={data}><Button variant="outline-secondary">Edit</Button></Link></td>
-                                        </tr>
+                            post.value.length === 0 ? (<h7>No Data Found</h7>) : (
+                                post.value.map((data) => {
+                                    return (
+                                        <tbody>
+                                            <tr>
+                                                <td><Nav.Link as={Link} to={`/authenticationproviders/viewall/${data._id}`} state={data}>{data.name}</Nav.Link></td>
+                                                <td>{data._id}</td>
+                                                <td>{data.provider_id}</td>
+                                                <td>{data.client_id}</td>
+                                                <td>{data.client_secret}</td>
+                                                <td>{data.application_id}</td>
+                                                <td>{data.is_global}</td>
+                                                <td>{data.state_name}</td>
+                                                <td><Link to='/authenticationproviders/addnew' state={data}><Button variant="outline-secondary">Edit</Button></Link></td>
+                                            </tr>
 
-                                    </tbody>
+                                        </tbody>
+                                    )
+                                }
                                 )
-                            }
-                            )
-                        )}
+                            ))}
                     </Table>
-                    <Nav className="d-flex justify-content-center">
-                        <ul className="pagination">
-                            {
-                                pages.map((pages) => (
-                                    <li className={ pages === currentPage ? "page-item active" : "page-item"}>
-                                        <p className="page-link" onClick={() => pagination(pages)} style={{'cursor':'pointer'}}>{pages}</p>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </Nav>
+
                 </Col>
             </Row>
+            <div className="text-center" style={{ "marginTop": "-120px" }}>
+                <button
+                    className="px-3 py-2 m-1 text-center" style={{ 'backgroundColor': '#66D6FF', 'border': 'none' }} onClick={onPreviousPageHandler} disabled={buttonDis}
+                >
+                    Previous
+                </button>
+
+                {pageNumber.map((Elem) => {
+                    return (
+                        <>
+                            <button
+                                className="px-3 py-2 m-1 text-center btn-outline-dark" style={{ "border": "none" }} onClick={() => ChangePage(Elem)}
+                            >
+                                {Elem}
+                            </button>
+                        </>
+                    );
+                })}
+                <button
+                    className="px-3 py-2 m-1 text-center" style={{ 'backgroundColor': '#66D6FF', 'border': 'none' }} onClick={onNextPageHandler} disabled={nextButtonDis}
+                >
+                    Next
+                </button>
+            </div>
         </div>
     )
 }
+
+export default Authentication;

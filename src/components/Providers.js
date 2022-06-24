@@ -41,7 +41,7 @@ function Providers() {
     }, [data])
     useEffect(() => {
         setTimeout(() => {
-            axios.post('http://localhost:9003/providers', pagination)
+            axios.get(`http://localhost:9003/providers/limit/${pagination.limit}/${pagination.skip}`)
                 .then(res => {
                     console.log(res.data)
                     setPost({ count: res.data.count, value: res.data.value })

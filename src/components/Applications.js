@@ -9,10 +9,15 @@ import axios from "axios"
 import { Link } from 'react-router-dom'
 import ReactLoading from 'react-loading';
 
-export default function Applications() {
-    const [post, setPost] = useState([])
+function Applications() {
+    const [post, setPost] = useState({ count: "", value: ""})
     const [isLoading, setIsLoading] = useState(false)
+    const [pagination, setPagination] = useState({ limit: 6, skip: 0})
     const [data, setData] = useState({ name: "" });
+    const [number, setNumber] = useState(1);
+    const [buttonDis, setButtonDis] = useState(false)
+    const [nextButtonDis, setNextButtonDis] = useState(true)
+
     const handleChange = async (e) => {
         setData({ ...data, name: e.target.value });
 
@@ -20,25 +25,80 @@ export default function Applications() {
 
     useEffect(() => {
         const value = async () => {
-            const response = await axios.post("http://localhost:9003/application/getbyname1", data)
+            const response = await axios.post("http://localhost:9003/application/getbyname", data)
             console.log(response.data);
-            setPost(response.data)
+            console.log(post.count);
+            setPost((previous) => ({
+                ...previous, value: response.data
+            }))
         }
         value()
     }, [data])
     useEffect(() => {
         setTimeout(() => {
-            axios.get('http://localhost:9003/application')
+            axios.get(`http://localhost:9003/application/limit/${pagination.limit}/${pagination.skip}`)
                 .then(res => {
                     console.log(res.data)
-                    setPost(res.data)
+                    setPost({ count: res.data.count, value: res.data.value})
                     setIsLoading(true)
                 })
                 .catch(err => {
                     console.log(err)
                 });
         }, 800);
-    }, []);
+        if (pagination.skip / 6 === 0) {
+            setButtonDis(true)
+        }
+        else {
+            setButtonDis(false)
+        }
+
+        if(((pagination.skip / 6)+1) === Math.ceil((post.count/6))) {
+            setNextButtonDis(true)
+        }
+        else {
+            setNextButtonDis(false)
+        }
+    }, [pagination]);
+
+    if (post.value.length > 6) {
+        const sea = post.value.slice(0, 6)
+        setPost((previous) => ({
+            ...previous, value: sea
+        }))
+    }
+
+    const pageNumber = [];
+
+    for (let i = 1; i <= Math.ceil(post.count / pagination.limit); i++) {
+        pageNumber.push(i);
+    }
+
+    // const data2 = post.slice(0, 3)
+    // console.log(data2)
+
+    const ChangePage = (pageNumber) => {
+        setNumber(pageNumber);
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * (pageNumber - 1)
+        }))
+
+    };
+
+    const onPreviousPageHandler = () => {
+        console.log(pagination.skip / 6)
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * ((pagination.skip / 6) - 1)
+        }))
+    }
+
+    const onNextPageHandler = () => {
+        console.log(pagination.skip / 6)
+        setPagination((previous) => ({
+            ...previous, skip: pagination.limit * ((pagination.skip / 6) + 1)
+        }))
+    }
+
     return (
         <div>
             <Container>
@@ -92,7 +152,9 @@ export default function Applications() {
                                     <ReactLoading type={"spin"} color={"black"} width={'150%'} />
 
                                 </div>
-                            ) : (post.map((data) => {
+                            ) : (
+                            post.value.length === 0 ? (<h7>No Data Found</h7>) : (
+                                post.value.map((data) => {
                                 return (
                                     <tbody>
 
@@ -111,11 +173,38 @@ export default function Applications() {
                                     </tbody>
                                 )
                             }
-                            ))}
+                            )))}
                         </Table>
                     </Col>
                 </Row>
+
+                <div className="text-center" style={{ "marginTop": "-150px" }}>
+                <button
+                    className="px-3 py-2 m-1 text-center" style={{ 'backgroundColor': '#66D6FF', 'border': 'none' }} onClick={onPreviousPageHandler} disabled={buttonDis}
+                >
+                    Previous
+                </button>
+
+                {pageNumber.map((Elem) => {
+                    return (
+                        <>
+                            <button
+                                className="px-3 py-2 m-1 text-center btn-outline-dark" style={{ "border": "none" }} onClick={() => ChangePage(Elem)}
+                            >
+                                {Elem}
+                            </button>
+                        </>
+                    );
+                })}
+                <button
+                    className="px-3 py-2 m-1 text-center" style={{ 'backgroundColor': '#66D6FF', 'border': 'none' }} onClick={onNextPageHandler} disabled={nextButtonDis}
+                >
+                    Next
+                </button>
+            </div>
+
             </Container>
         </div>
     )
 }
+export default Applications;

@@ -13,7 +13,7 @@ import _, { get } from "lodash"
 
 import '../css/Shopify.css'
 
-export default function Shopify() {
+function Shopify() {
     const [post, setPost] = useState({ count: "", value: "" })
     const [isLoading, setIsLoading] = useState(false)
     const [pagination, setPagination] = useState({ limit: 6, skip: 0 })
@@ -51,7 +51,7 @@ export default function Shopify() {
     }, [data])
     useEffect(() => {
         setTimeout(() => {
-            axios.post('http://localhost:9002/shopifystores')
+            axios.get(`http://localhost:9002/shopifystores/limit/${pagination.limit}/${pagination.skip}`)
                 .then(res => {
                     console.log(res.data)
                     setPost({ count: res.data.count, value: res.data.value })
@@ -208,3 +208,4 @@ export default function Shopify() {
         </div>
     )
 }
+export default Shopify;
